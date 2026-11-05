@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>goDutch! – rachar a conta fácil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="landingpage.css">
+<script>
+  // liga as animações antes da página aparecer (evita os balões "piscarem" no lugar final)
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('anim');
+</script>
+</head>
+<body>
+<div class="page">
+
+  <!-- 1. HERO -->
+  <section class="sec hero">
+    <img class="icone" src="assets/iconApp.png" alt="goDutch!">
+    <nav class="lang"><a href="#" data-lang="pt">PT</a> | <a href="#" data-lang="es">ESP</a> | <a href="#" data-lang="en">EN</a></nav>
+
+    <nav class="menu">
+      <a href="#quem">
+        <span class="pill" style="--x:72;--y:145;--ate:178;--dx:142;--dy:62.5;--date:192" data-i18n="menuSobre">Sobre nós</span>
+        <span class="em" style="--x:72;--y:145;--r:30;background:var(--azul);--dx:142;--dy:62.5;--dr:15.5">😎</span>
+      </a>
+      <a class="js-appstore" href="#" target="_blank" rel="noopener">
+        <span class="pill" style="--x:253;--y:170;--ate:355;--dx:236.5;--dy:76;--date:286.5" data-i18n="menuDownload">Download</span>
+        <span class="em" style="--x:253;--y:170;--r:30;background:var(--verde);--dx:236.5;--dy:76;--dr:15.5">😇</span>
+      </a>
+      <a class="js-email" href="mailto:letssgodutch@gmail.com">
+        <span class="pill" style="--x:250;--y:348;--ate:348;--dx:279.5;--dy:195;--date:329.5" data-i18n="menuContato">Contato</span>
+        <span class="em" style="--x:250;--y:348;--r:30;background:var(--amarelo);--dx:279.5;--dy:195;--dr:15.5">🥸</span>
+      </a>
+      <a class="js-notion-suporte" href="#" target="_blank" rel="noopener">
+        <span class="pill" style="--x:76;--y:374;--ate:173;--dx:126.5;--dy:210;--date:176" data-i18n="menuSuporte">Suporte</span>
+        <span class="em" style="--x:76;--y:374;--r:30;background:var(--vermelho);--dx:126.5;--dy:210;--dr:15.5">🌈</span>
+      </a>
+    </nav>
+
+    <h1 class="logo">go<b>Dutch!</b></h1>
+    <p class="slogan" data-i18n="slogan">rachar a conta fácil</p>
+    <a class="btn js-appstore" href="#" target="_blank" rel="noopener" data-i18n="btnApp"><b>Grátis</b> na App Store</a>
+  </section>
+
+  <!-- 2. CARTEIRA + CONFETES -->
+  <section class="sec carteira">
+    <img class="confete c1 sobe" style="--ordem:0" src="assets/Group%206074.png" alt="">
+    <img class="confete c2 sobe" style="--ordem:2" src="assets/Group%206075.png" alt="">
+    <img class="mock sobe" style="--ordem:1" src="assets/mockupAberto.png" alt="Carteira aberta com cartão goDutch! e celular mostrando quanto cada um pagou">
+  </section>
+
+  <!-- 3. INTRO -->
+  <section class="sec intro" id="sobre">
+    <div class="intro-txt">
+    <h2 class="logo">go<b>Dutch!</b></h2>
+    <p class="sub" data-i18n="introSub">está com você na hora de dividir a conta do bar ou restaurante!</p>
+    <p class="como" data-i18n="introComo"><b>Escaneie</b> a nota, <b>marque</b> o que cada pessoa consumiu e <b>veja</b> quanto cada um deve pagar, sem complicações.</p>
+    </div>
+    <span class="em" style="--x:148;--y:158;--r:40;background:var(--cinza);--dx:89;--dy:63.5;--dr:26.5">👨🏻‍🔬</span>
+    <span class="em" style="--x:84;--y:219;--r:40;background:var(--verde);--dx:47.5;--dy:103.5;--dr:26.5">🐙</span>
+    <span class="em" style="--x:188;--y:259;--r:60;background:var(--azul);--dx:116;--dy:131;--dr:39">😎</span>
+    <span class="em" style="--x:298;--y:258;--r:40;background:var(--amarelo);--dx:188;--dy:129;--dr:26.5">👨🏼‍💻</span>
+    <span class="em" style="--x:257;--y:318;--r:24;background:var(--rosa);--dx:161;--dy:170;--dr:16">🤓</span>
+  </section>
+
+  <!-- 4. NOTINHA -->
+  <section class="sec notinha">
+    <div class="fenda"></div>
+    <div class="papel">
+      <div class="barra"></div>
+      <div class="linhas l1"><i></i><i></i><i class="c"></i><i></i><i class="c"></i></div>
+      <div class="linhas l2"><i></i><i class="c"></i><i></i><i></i><i class="c"></i><i></i><i></i></div>
+      <div class="linhas l3"><i></i><i class="c"></i><i></i></div>
+      <div class="codigo"></div>
+    </div>
+    <!-- bolinhas (atras = passa por trás do papel) -->
+    <span class="dot"       style="--x:279;--y:109;--r:11;background:#ffa31a"></span>
+    <span class="dot atras" style="--x:290;--y:140;--r:20;background:#4be63c"></span>
+    <span class="dot"       style="--x:87; --y:148;--r:9; background:#1ab8f0"></span>
+    <span class="dot"       style="--x:112;--y:164;--r:18;background:#ffe14d"></span>
+    <span class="dot"       style="--x:84; --y:226;--r:15;background:#ea1fd0"></span>
+    <span class="dot atras" style="--x:100;--y:272;--r:25;background:#ffa31a"></span>
+    <span class="dot"       style="--x:277;--y:240;--r:18;background:#1fc3f5"></span>
+    <span class="dot"       style="--x:306;--y:259;--r:15;background:#1b75e8"></span>
+    <span class="dot"       style="--x:279;--y:287;--r:24;background:#f20d0d"></span>
+    <span class="dot atras" style="--x:95; --y:410;--r:11;background:#1fc3f5"></span>
+    <span class="dot"       style="--x:107;--y:440;--r:20;background:#5af01e"></span>
+    <span class="dot"       style="--x:286;--y:435;--r:11;background:#ffe14d"></span>
+    <span class="dot atras" style="--x:295;--y:475;--r:25;background:#ea1fd0"></span>
+  </section>
+
+  <!-- 5. COMO FUNCIONA -->
+  <section class="sec passos">
+    <div class="trilho" id="trilho">
+      <div class="passo">
+        <h3 data-i18n="passoDivida">Divida<span>justamente</span></h3>
+        <img src="assets/mockup1.png" alt="Tela para dividir a conta">
+      </div>
+      <div class="passo ativo">
+        <h3 data-i18n="passoAdicione">Adicione<span>seus amigos</span></h3>
+        <img src="assets/mockup3.png" alt="Tela para adicionar amigos">
+      </div>
+      <div class="passo">
+        <h3 data-i18n="passoEscaneie">Escaneie<span>a notinha</span></h3>
+        <img src="assets/mockup2.png" alt="Tela para escanear a nota">
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CARTÕES -->
+  <section class="sec cartoes">
+    <!-- carrossel infinito: a 2ª metade repete a 1ª para o loop não ter emenda -->
+    <div class="cartoes-trilho">
+      <div class="cartoes-faixa">
+        <!-- ordem pensada pra cores parecidas não ficarem lado a lado -->
+        <img src="assets/cartaoVerde.png" alt="Cartão goDutch! verde">
+        <img src="assets/cartaoIndigo.png" alt="Cartão goDutch! índigo">
+        <img src="assets/cartaoDourado.png" alt="Cartão goDutch! dourado">
+        <img src="assets/cartaoAzul.png" alt="Cartão goDutch! azul">
+        <img src="assets/cartaoVermelho.png" alt="Cartão goDutch! vermelho">
+        <img src="assets/cartaoLilas.png" alt="Cartão goDutch! lilás">
+        <img src="assets/cartaoEsmeralda.png" alt="Cartão goDutch! esmeralda">
+        <img src="assets/cartaoRosa.png" alt="Cartão goDutch! roxo">
+        <!-- cópia -->
+        <img src="assets/cartaoVerde.png" alt="" aria-hidden="true">
+        <img src="assets/cartaoIndigo.png" alt="" aria-hidden="true">
+        <img src="assets/cartaoDourado.png" alt="" aria-hidden="true">
+        <img src="assets/cartaoAzul.png" alt="" aria-hidden="true">
+        <img src="assets/cartaoVermelho.png" alt="" aria-hidden="true">
+        <img src="assets/cartaoLilas.png" alt="" aria-hidden="true">
+        <img src="assets/cartaoEsmeralda.png" alt="" aria-hidden="true">
+        <img src="assets/cartaoRosa.png" alt="" aria-hidden="true">
+      </div>
+    </div>
+    <div class="arraste">
+      <div class="trilha"></div>
+      <p data-i18n="arraste"><b>Arraste</b> o cartão para finalizar</p>
+    </div>
+  </section>
+
+  <!-- 7. DOWNLOAD -->
+  <section class="sec download" id="download">
+    <img class="circulo" src="assets/circulo.png" alt="">
+    <img class="mock" src="assets/notinhaSaindo.png" alt="QR code para baixar o goDutch! na App Store">
+    <p class="logo">go<b>Dutch!</b></p>
+    <p class="slogan" data-i18n="slogan">rachar a conta fácil</p>
+    <a class="btn btn-gratis js-appstore" href="#" target="_blank" rel="noopener" data-i18n="btnApp"><b>Grátis</b> na App Store</a>
+    <a class="btn btn-baixe js-appstore" href="#" target="_blank" rel="noopener" data-i18n="btnBaixe"><b>Baixe</b> agora</a>
+  </section>
+
+  <!-- 8. POR QUE -->
+  <section class="sec porque">
+    <h3 data-i18n="porqueTitulo"><b>Por que</b> criamos o go<b>Dutch!</b></h3>
+    <p class="p1" data-i18n="porque1">Todo mundo já viveu aquela hora que a conta chega, alguém sugere dividir tudo igual e, no fim, quem consumiu menos paga mais. Numa ida ao bar com os amigos, dissemos CHEGA!</p>
+    <p class="p2" data-i18n="porque2">Foi daí que veio a ideia do GoDutch, um app simples para dividir a conta de forma justa, sem calculadora e sem desconforto na mesa.</p>
+  </section>
+
+  <div class="fundo-rodape"></div>
+
+  <!-- 9. QUEM SOMOS -->
+  <section class="sec quem" id="quem">
+    <div class="quem-roda">
+    <div class="roda"></div>
+    <span class="n4">4</span>
+    <span class="em" style="--x:189.5;--y:95;--r:29;background:#98f86a">🐙</span>
+    <span class="em" style="--x:143;--y:135.5;--r:29;background:#e434c9">🤓</span>
+    <span class="em" style="--x:246;--y:121;--r:29;background:#66d7fb">😎</span>
+    <span class="em" style="--x:200;--y:165;--r:29;background:#fbe877">🥸</span>
+    <svg class="quem-titulo" viewBox="0 0 390 130" aria-label="Quem somos?">
+      <path id="arco" d="M88,88 C102,58 128,34 160,22 S215,8 245,9 S285,12 300,14" fill="none"/>
+      <text><textPath href="#arco"><tspan class="q1" data-i18n="quem1">Quem</tspan><tspan class="q2" data-i18n="quem2"> somos?</tspan></textPath></text>
+    </svg>
+    </div>
+
+    <div class="time">
+      <div class="membro">
+        <div class="pill" style="--x:172;--y:268;--ate:295;--dx:157.4;--dy:184.8;--date:238.4"><small>Thaís · Developer</small><span>@tatacanguçu</span></div>
+        <span class="em" style="--x:172;--y:268;--r:24;background:var(--verde);--dx:157.4;--dy:184.8;--dr:15.5">🐙</span>
+      </div>
+      <div class="membro">
+        <div class="pill" style="--x:48;--y:322;--ate:170;--dx:29.4;--dy:221.2;--date:109.4"><small>Camila · Developer</small><span>@cparolin_</span></div>
+        <span class="em" style="--x:48;--y:322;--r:24;background:var(--amarelo);--dx:29.4;--dy:221.2;--dr:15.5">🥸</span>
+      </div>
+      <div class="membro">
+        <div class="pill" style="--x:254;--y:322;--ate:376;--dx:244.6;--dy:223.8;--date:324.1"><small>Yasmin · Developer</small><span>@y.mendss</span></div>
+        <span class="em" style="--x:254;--y:322;--r:24;background:var(--rosa);--dx:244.6;--dy:223.8;--dr:15.5">🤓</span>
+      </div>
+      <div class="membro">
+        <div class="pill" style="--x:118;--y:377;--ate:242;--dx:111.3;--dy:277.7;--date:191.8"><small>Matheus · Designer</small><span>@matheusmotta_</span></div>
+        <span class="em" style="--x:118;--y:377;--r:24;background:var(--azul);--dx:111.3;--dy:277.7;--dr:15.5">😎</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. RODAPÉ -->
+  <footer class="sec rodape" id="contato">
+    <img class="icone" src="assets/iconApp.png" alt="">
+    <span class="logo">go<b>Dutch!</b></span>
+    <h4 class="col1" data-i18n="segue">segue aí!</h4>
+    <p class="col1">
+      <a class="js-instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+      <a class="js-tiktok" href="#" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="#777"><path d="M16 3c.3 2.2 1.8 3.9 4 4.1v3.2c-1.5 0-2.9-.4-4-1.2v6.4A5.5 5.5 0 1 1 10.5 10v3.3a2.3 2.3 0 1 0 2.3 2.3V3H16z"/></svg></a>
+      <a class="js-instagram" href="#" target="_blank" rel="noopener">@go.dutch</a>
+    </p>
+    <h4 class="col2" data-i18n="ajuda">ajuda &amp; suporte</h4>
+    <p class="col2"><a class="js-email" href="mailto:letssgodutch@gmail.com">letssgodutch@gmail.com</a></p>
+  </footer>
+
+</div>
+
+<script>
+  /* =========================================================
+     LINKS — troque aqui quando tiver os endereços certos
+     ========================================================= */
+  var LINKS = {
+    appStore:  'https://apps.apple.com/br/app/godutch/id6807981022',
+
+    // e-mail (balão "Contato" e rodapé)
+    email: 'letssgodutch@gmail.com',
+
+    // página de suporte no Notion (balão "Suporte")
+    notionSuporte:  'https://app.notion.com/p/goDutch-Suporte-2c795313e3b48397bc20012de72bafef?source=copy_link',
+
+    instagram: 'https://www.instagram.com/go.dutch',
+    tiktok:    'https://www.tiktok.com/@go.dutch'
+  };
+
+  /* =========================================================
+     TEXTOS EM PT / ES / EN
+     ========================================================= */
+  var TEXTOS = {
+    pt: {
+      menuSobre:'Sobre nós', menuDownload:'Download', menuContato:'Contato', menuSuporte:'Suporte',
+      slogan:'rachar a conta fácil',
+      btnApp:'<b>Grátis</b> na App Store', btnBaixe:'<b>Baixe</b> agora',
+      introSub:'está com você na hora de dividir a conta do bar ou restaurante!',
+      introComo:'<b>Escaneie</b> a nota, <b>marque</b> o que cada pessoa consumiu e <b>veja</b> quanto cada um deve pagar, sem complicações.',
+      passoAdicione:'Adicione<span>seus amigos</span>',
+      passoEscaneie:'Escaneie<span>a notinha</span>',
+      passoDivida:'Divida<span>justamente</span>',
+      arraste:'<b>Arraste</b> o cartão para finalizar',
+      porqueTitulo:'<b>Por que</b> criamos o go<b>Dutch!</b>',
+      porque1:'Todo mundo já viveu aquela hora que a conta chega, alguém sugere dividir tudo igual e, no fim, quem consumiu menos paga mais. Numa ida ao bar com os amigos, dissemos CHEGA!',
+      porque2:'Foi daí que veio a ideia do GoDutch, um app simples para dividir a conta de forma justa, sem calculadora e sem desconforto na mesa.',
+      quem1:'Quem', quem2:' somos?',
+      segue:'segue aí!', ajuda:'ajuda &amp; suporte'
+    },
+    es: {
+      menuSobre:'Sobre nosotros', menuDownload:'Descargar', menuContato:'Contacto', menuSuporte:'Soporte',
+      slogan:'dividir la cuenta fácil',
+      btnApp:'<b>Gratis</b> en la App Store', btnBaixe:'<b>Descárgala</b> ahora',
+      introSub:'¡está contigo a la hora de dividir la cuenta del bar o restaurante!',
+      introComo:'<b>Escanea</b> el ticket, <b>marca</b> lo que consumió cada persona y <b>mira</b> cuánto debe pagar cada uno, sin complicaciones.',
+      passoAdicione:'Agrega<span>a tus amigos</span>',
+      passoEscaneie:'Escanea<span>el ticket</span>',
+      passoDivida:'Divide<span>con justicia</span>',
+      arraste:'<b>Desliza</b> la tarjeta para finalizar',
+      porqueTitulo:'<b>Por qué</b> creamos go<b>Dutch!</b>',
+      porque1:'Todos hemos vivido ese momento: llega la cuenta, alguien sugiere dividir todo por igual y, al final, quien consumió menos paga más. En una salida al bar con amigos, dijimos ¡BASTA!',
+      porque2:'De ahí nació la idea de GoDutch, una app sencilla para dividir la cuenta de forma justa, sin calculadora y sin incomodidad en la mesa.',
+      quem1:'¿Quiénes', quem2:' somos?',
+      segue:'¡síguenos!', ajuda:'ayuda y soporte'
+    },
+    en: {
+      menuSobre:'About us', menuDownload:'Download', menuContato:'Contact', menuSuporte:'Support',
+      slogan:'splitting the bill made easy',
+      btnApp:'<b>Free</b> on the App Store', btnBaixe:'<b>Download</b> now',
+      introSub:'is with you when it’s time to split the bill at the bar or restaurant!',
+      introComo:'<b>Scan</b> the receipt, <b>tag</b> what each person had and <b>see</b> how much everyone owes, hassle-free.',
+      passoAdicione:'Add<span>your friends</span>',
+      passoEscaneie:'Scan<span>the receipt</span>',
+      passoDivida:'Split<span>fairly</span>',
+      arraste:'<b>Swipe</b> the card to finish',
+      porqueTitulo:'<b>Why</b> we created go<b>Dutch!</b>',
+      porque1:'We’ve all been there: the bill arrives, someone suggests splitting everything evenly and, in the end, whoever had the least pays the most. On a night out at the bar with friends, we said ENOUGH!',
+      porque2:'That’s where the idea for GoDutch came from: a simple app to split the bill fairly, with no calculator and no awkwardness at the table.',
+      quem1:'Who', quem2:' are we?',
+      segue:'follow us!', ajuda:'help &amp; support'
+    }
+  };
+  var HTML_LANG = { pt:'pt-BR', es:'es', en:'en' };
+
+  function trocarIdioma(lang){
+    if (!TEXTOS[lang]) lang = 'pt';
+    var t = TEXTOS[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      if (t[k] !== undefined) el.innerHTML = t[k];
+    });
+    document.documentElement.lang = HTML_LANG[lang];
+    document.querySelectorAll('.lang a').forEach(function(a){
+      a.classList.toggle('ativo', a.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('godutch-idioma', lang); } catch(e) {}
+  }
+
+  document.querySelectorAll('.lang a').forEach(function(a){
+    a.addEventListener('click', function(e){ e.preventDefault(); trocarIdioma(a.getAttribute('data-lang')); });
+  });
+
+  // idioma inicial: o último escolhido, ou o do navegador, ou PT
+  (function(){
+    var salvo = null;
+    try { salvo = localStorage.getItem('godutch-idioma'); } catch(e) {}
+    var nav = (navigator.language || 'pt').slice(0,2).toLowerCase();
+    trocarIdioma(salvo || (TEXTOS[nav] ? nav : 'pt'));
+  })();
+
+  /* =========================================================
+     LINKS (App Store e redes)
+     ========================================================= */
+  // enquanto um link estiver como '#', o botão não abre nada
+  function ligar(classe, url){
+    document.querySelectorAll(classe).forEach(function(a){
+      if (url && url !== '#') { a.href = url; }
+      else { a.removeAttribute('target'); a.addEventListener('click', function(e){ e.preventDefault(); }); }
+    });
+  }
+  ligar('.js-appstore',       LINKS.appStore);
+  ligar('.js-instagram',      LINKS.instagram);
+  ligar('.js-tiktok',         LINKS.tiktok);
+  document.querySelectorAll('.js-email').forEach(function(a){ a.href = 'mailto:' + LINKS.email; });
+  ligar('.js-notion-suporte',  LINKS.notionSuporte);
+
+  /* =========================================================
+     LINKS INTERNOS (ex.: "Sobre nós" → "Quem somos?")
+     rola até a seção, mesmo quando ela fica no fim da página
+     ========================================================= */
+  document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var alvo = document.querySelector(a.getAttribute('href'));
+      if (!alvo) return;
+      e.preventDefault();
+      var y = alvo.getBoundingClientRect().top + window.pageYOffset - 20;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+  });
+
+  /* =========================================================
+     ANIMAÇÃO 1 — balões do topo saem do meio (de trás do logo)
+     e vão até a posição final
+     ========================================================= */
+  (function(){
+    if (!document.documentElement.classList.contains('anim')) return;
+    var logo = document.querySelector('.hero .logo');
+    var baloes = document.querySelectorAll('.menu a');
+    function preparar(){
+      var l = logo.getBoundingClientRect();
+      var cx = l.left + l.width / 2, cy = l.top + l.height / 2;
+      baloes.forEach(function(a){
+        var e = a.querySelector('.em').getBoundingClientRect();
+        a.style.setProperty('--ox', (cx - (e.left + e.width / 2)) + 'px');
+        a.style.setProperty('--oy', (cy - (e.top + e.height / 2)) + 'px');
+      });
+    }
+    preparar();
+    // espera 2 quadros pra posição inicial "pegar", depois solta todos os balões juntos
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      baloes.forEach(function(a){
+        a.style.setProperty('--atraso', '0.4s');
+        a.classList.add('saiu');
+      });
+    }); });
+  })();
+
+  /* =========================================================
+     ANIMAÇÃO 2 — ao rolar a página, os elementos com a classe
+     "sobe" sobem em cadeia até a posição final
+     (a ordem vem de --ordem no HTML: 0, 1, 2...)
+     ========================================================= */
+  (function(){
+    if (!document.documentElement.classList.contains('anim')) return;
+    var els = document.querySelectorAll('.sobe');
+    if (!('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('visivel'); }); return; }
+    // só começa a vigiar DEPOIS que o usuário rolar a página pela 1ª vez
+    // (assim nada sobe sozinho quando a página abre)
+    function ligarObservadores(){
+      document.querySelectorAll('.sec').forEach(function(sec){
+        var filhos = sec.querySelectorAll('.sobe');
+        if (!filhos.length) return;
+        var o = new IntersectionObserver(function(en){
+          if (en[0].isIntersecting){ filhos.forEach(function(f){ f.classList.add('visivel'); }); o.disconnect(); }
+        }, { rootMargin: '0px 0px -20% 0px' });
+        o.observe(sec);
+      });
+    }
+    function aoRolar(){
+      if (window.pageYOffset < 30) return;   // ignora mexidinhas mínimas
+      window.removeEventListener('scroll', aoRolar);
+      ligarObservadores();
+    }
+    window.addEventListener('scroll', aoRolar, { passive:true });
+  })();
+
+  /* =========================================================
+     ANIMAÇÃO 4 — bolinhas da notinha aparecem conforme desce
+     e somem (encolhendo) se voltar pra cima
+     ========================================================= */
+  (function(){
+    if (!document.documentElement.classList.contains('anim')) return;
+    var dots = Array.prototype.slice.call(document.querySelectorAll('.notinha .dot'));
+    var agendado = false;
+    function atualizar(){
+      agendado = false;
+      var limite = window.innerHeight * 0.85;   // a bolinha aparece quando chega a 85% da altura da tela
+      dots.forEach(function(d){
+        var r = d.getBoundingClientRect();
+        d.classList.toggle('on', r.top + r.height / 2 < limite);
+      });
+    }
+    function pedir(){ if (!agendado){ agendado = true; requestAnimationFrame(atualizar); } }
+    window.addEventListener('scroll', pedir, { passive:true });
+    window.addEventListener('resize', pedir);
+    atualizar();
+  })();
+
+  /* =========================================================
+     ANIMAÇÃO 5 — celulares do "como funciona" se alinham conforme rola
+     (0 = escada, quando a seção entra na tela; 1 = alinhados, perto do meio)
+     ========================================================= */
+  (function(){
+    if (!document.documentElement.classList.contains('anim')) return;
+    var sec = document.querySelector('.passos');
+    var agendado = false;
+    function atualizar(){
+      agendado = false;
+      var r = sec.getBoundingClientRect(), h = window.innerHeight;
+      // trajeto mais longo: começa com o topo da seção a 95% da tela e termina a 15%
+      var p = (h * 0.95 - r.top) / (h * 0.80);
+      p = Math.max(0, Math.min(1, p));
+      // cada celular sobe numa "janela" própria, encavalada com a do vizinho:
+      // Adicione 0–50%, Escaneie 25–75%, Divida 50–100%
+      // (quando o Escaneie chega, o Divida está na metade do caminho)
+      function janela(ini){ var v = (p - ini) / 0.5; v = Math.max(0, Math.min(1, v)); return v * v * (3 - 2 * v); }
+      sec.style.setProperty('--p1', janela(0).toFixed(3));
+      sec.style.setProperty('--p2', janela(0.25).toFixed(3));
+      sec.style.setProperty('--p3', janela(0.5).toFixed(3));
+    }
+    function pedir(){ if (!agendado){ agendado = true; requestAnimationFrame(atualizar); } }
+    window.addEventListener('scroll', pedir, { passive:true });
+    window.addEventListener('resize', pedir);
+    atualizar();
+  })();
+
+  /* =========================================================
+     ANIMAÇÃO 6 — círculo do download cresce atrás do mockup ao rolar;
+     guarda o maior tamanho já alcançado, então nunca encolhe de volta
+     ========================================================= */
+  (function(){
+    if (!document.documentElement.classList.contains('anim')) return;
+    var sec = document.querySelector('.download');
+    var maior = 0, agendado = false;
+    function atualizar(){
+      agendado = false;
+      var r = sec.getBoundingClientRect(), h = window.innerHeight;
+      // começa assim que a seção aparece embaixo e termina com o topo da seção a 10% da tela;
+      // velocidade constante (sem demora no começo nem no fim)
+      var p = (h - r.top) / (h * 0.9);
+      p = Math.max(0, Math.min(1, p));
+      if (p > maior){ maior = p; sec.style.setProperty('--c', maior.toFixed(3)); }
+      if (maior >= 1){ window.removeEventListener('scroll', pedir); window.removeEventListener('resize', pedir); }
+    }
+    function pedir(){ if (!agendado){ agendado = true; requestAnimationFrame(atualizar); } }
+    window.addEventListener('scroll', pedir, { passive:true });
+    window.addEventListener('resize', pedir);
+    atualizar();
+  })();
+
+  /* =========================================================
+     ANIMAÇÃO 7 — "Quem somos?": ao passar o mouse no círculo, os cards
+     com os @ saem de dentro dele e vão pro lugar. Depois ficam flutuando.
+     (no celular, sem mouse: abre ao tocar no círculo ou quando ele aparece na tela)
+     ========================================================= */
+  (function(){
+    if (!document.documentElement.classList.contains('anim')) return;
+    var quem = document.querySelector('.quem');
+    var roda = quem.querySelector('.roda');
+    var membros = quem.querySelectorAll('.membro');
+    function medir(){
+      var c = roda.getBoundingClientRect();
+      var cx = c.left + c.width / 2, cy = c.top + c.height / 2;
+      membros.forEach(function(m){
+        var w = m.getBoundingClientRect(), e = m.querySelector('.em').getBoundingClientRect();
+        var ex = e.left + e.width / 2, ey = e.top + e.height / 2;
+        m.style.setProperty('--ox', (cx - ex) + 'px');
+        m.style.setProperty('--oy', (cy - ey) + 'px');
+        m.style.setProperty('--tx', (ex - w.left) + 'px');
+        m.style.setProperty('--ty', (ey - w.top) + 'px');
+      });
+    }
+    medir();
+    quem.classList.add('fechado');
+    window.addEventListener('resize', function(){
+      if (!quem.classList.contains('fechado')) return;
+      quem.classList.remove('fechado'); medir(); quem.classList.add('fechado');
+    });
+    function abrir(){
+      if (!quem.classList.contains('fechado')) return;
+      membros.forEach(function(m, i){ m.style.setProperty('--atraso', (i * 0.15) + 's'); });
+      quem.classList.remove('fechado');
+      quem.classList.add('aberto');
+    }
+    var alvo = quem.querySelector('.quem-roda');
+    alvo.addEventListener('mouseover', abrir);
+    alvo.addEventListener('click', abrir);
+    // aparelhos sem mouse (celular/tablet): abre quando o círculo aparece bem na tela
+    if (window.matchMedia('(hover: none)').matches && 'IntersectionObserver' in window){
+      var o = new IntersectionObserver(function(en){
+        if (en[0].isIntersecting){ abrir(); o.disconnect(); }
+      }, { threshold: 0.6 });
+      o.observe(roda);
+    }
+  })();
+
+  /* =========================================================
+     CARROSSEL "como funciona"
+     ========================================================= */
+  (function(){
+    var t = document.getElementById('trilho');
+    var passos = t.querySelectorAll('.passo');
+    function centralizar(el){ t.scrollLeft = el.offsetLeft - (t.clientWidth - el.offsetWidth) / 2; }
+    function marcar(){
+      var meio = t.scrollLeft + t.clientWidth / 2, melhor = null, dist = 1e9;
+      passos.forEach(function(p){
+        var d = Math.abs(p.offsetLeft + p.offsetWidth / 2 - meio);
+        if (d < dist){ dist = d; melhor = p; }
+      });
+      passos.forEach(function(p){ p.classList.toggle('ativo', p === melhor); });
+    }
+    // tocar num celular do lado leva ele pro centro
+    passos.forEach(function(p){
+      p.addEventListener('click', function(){
+        t.scrollTo({ left: p.offsetLeft - (t.clientWidth - p.offsetWidth) / 2, behavior:'smooth' });
+      });
+    });
+    window.addEventListener('load', function(){ centralizar(passos[1]); marcar(); });
+    t.addEventListener('scroll', marcar, {passive:true});
+  })();
+</script>
+</body>
+</html>

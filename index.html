@@ -448,6 +448,44 @@
   })();
 
   /* =========================================================
+     ANIMAÇÃO 5b — celular (mobile): o carrossel do "como funciona" anda
+     para o lado conforme a página rola (Divida → Adicione → Escaneie),
+     e o celular que passa pelo meio vai crescendo
+     ========================================================= */
+  (function(){
+    if (!document.documentElement.classList.contains('anim')) return;
+    var mq = window.matchMedia('(max-width: 767px)');
+    var sec = document.querySelector('.passos');
+    var t = document.getElementById('trilho');
+    var passos = t.querySelectorAll('.passo');
+    var agendado = false;
+    function centro(el){ return el.offsetLeft - (t.clientWidth - el.offsetWidth) / 2; }
+    function atualizar(){
+      agendado = false;
+      if (!mq.matches){ passos.forEach(function(p){ p.style.removeProperty('--s'); }); return; }
+      var r = sec.getBoundingClientRect(), h = window.innerHeight;
+      var c = r.top + r.height / 2;
+      // 0 = meio da seção a 80% da tela (mostra "Divida"), 0,5 = no meio da tela ("Adicione"), 1 = a 20% ("Escaneie")
+      var p = (h * 0.8 - c) / (h * 0.6);
+      p = Math.max(0, Math.min(1, p));
+      var f = p * (passos.length - 1), i = Math.min(Math.floor(f), passos.length - 2), fr = f - i;
+      t.scrollLeft = centro(passos[i]) + (centro(passos[i + 1]) - centro(passos[i])) * fr;
+      // tamanho de cada celular: 1 no centro, 0,8 longe
+      var meio = t.scrollLeft + t.clientWidth / 2;
+      passos.forEach(function(el){
+        var d = Math.abs(el.offsetLeft + el.offsetWidth / 2 - meio) / el.offsetWidth;
+        el.style.setProperty('--s', (1 - 0.2 * Math.min(1, d)).toFixed(3));
+        el.classList.toggle('ativo', d < 0.5);
+      });
+    }
+    function pedir(){ if (!agendado){ agendado = true; requestAnimationFrame(atualizar); } }
+    window.addEventListener('scroll', pedir, { passive:true });
+    window.addEventListener('resize', pedir);
+    window.addEventListener('load', pedir);
+    pedir();
+  })();
+
+  /* =========================================================
      ANIMAÇÃO 6 — círculo do download cresce atrás do mockup ao rolar;
      guarda o maior tamanho já alcançado, então nunca encolhe de volta
      ========================================================= */

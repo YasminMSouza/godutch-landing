@@ -484,3 +484,10 @@ html[lang="en"] .download .slogan{ font-size:calc(8 * var(--u)); }
 @media (min-width:768px){ .rodape{ --pw:calc(411 * var(--u)); --m:calc(19.4 * var(--u)); } }
 .rodape .icone, .rodape .logo{ translate:calc(-1 * var(--desl)) 0; }
 .rodape h4, .rodape p{ translate:var(--desl) 0; }
+
+/* 5b. Como funciona (celular): o carrossel anda sozinho ao rolar a página.
+       Sem "encaixe" (snap) pra não brigar com o movimento; tamanho vem do JS (--s) */
+@media (max-width:767px){
+  .anim .trilho{ scroll-snap-type:none; }
+  .anim .passo, .anim .passo.ativo{ transform:scale(var(--s,.8)); transition:none; }
+}

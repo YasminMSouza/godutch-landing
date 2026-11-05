@@ -79,8 +79,8 @@ b{font-weight:700}
 
 /* ---------- 1. HERO ---------- */
 .hero{top:0;height:calc(440 * var(--u))}
-.icone{position:absolute;left:calc(24 * var(--u));top:calc(59 * var(--u));width:calc(32 * var(--u));height:calc(32 * var(--u))}
-.lang{position:absolute;right:calc(22 * var(--u));top:calc(68 * var(--u));font-size:calc(11 * var(--u));color:#bdbfc1;letter-spacing:calc(.3 * var(--u))}
+.icone{position:absolute;left:calc(24 * var(--u));top:calc(34 * var(--u));width:calc(32 * var(--u));height:calc(32 * var(--u))}
+.lang{position:absolute;right:calc(22 * var(--u));top:calc(43 * var(--u));font-size:calc(11 * var(--u));color:#bdbfc1;letter-spacing:calc(.3 * var(--u))}
 .lang a{color:#bdbfc1;transition:color .2s}
 .lang a.ativo,.lang a:hover{color:#7d8286}
 .menu .pill{--h:36;--r:30;font-size:calc(12.5 * var(--u));color:#4a4a4a}

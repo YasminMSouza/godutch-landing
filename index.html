@@ -458,30 +458,43 @@
     var sec = document.querySelector('.passos');
     var t = document.getElementById('trilho');
     var passos = t.querySelectorAll('.passo');
-    var agendado = false;
+    var atual = null, alvo = 0, rodando = false;
     function centro(el){ return el.offsetLeft - (t.clientWidth - el.offsetWidth) / 2; }
-    function atualizar(){
-      agendado = false;
-      if (!mq.matches){ passos.forEach(function(p){ p.style.removeProperty('--s'); }); return; }
+    function calcularAlvo(){
       var r = sec.getBoundingClientRect(), h = window.innerHeight;
       var c = r.top + r.height / 2;
-      // 0 = meio da seção a 80% da tela (mostra "Divida"), 0,5 = no meio da tela ("Adicione"), 1 = a 20% ("Escaneie")
-      var p = (h * 0.8 - c) / (h * 0.6);
+      // trajeto longo: meio da seção a 95% da tela ("Divida") → 50% ("Adicione") → 5% ("Escaneie")
+      var p = (h * 0.95 - c) / (h * 0.9);
       p = Math.max(0, Math.min(1, p));
+      p = p * p * (3 - 2 * p);                      // começa e termina suave
       var f = p * (passos.length - 1), i = Math.min(Math.floor(f), passos.length - 2), fr = f - i;
-      t.scrollLeft = centro(passos[i]) + (centro(passos[i + 1]) - centro(passos[i])) * fr;
-      // tamanho de cada celular: 1 no centro, 0,8 longe
-      var meio = t.scrollLeft + t.clientWidth / 2;
+      return centro(passos[i]) + (centro(passos[i + 1]) - centro(passos[i])) * fr;
+    }
+    function aplicar(x){
+      t.scrollLeft = x;
+      var meio = x + t.clientWidth / 2;
       passos.forEach(function(el){
         var d = Math.abs(el.offsetLeft + el.offsetWidth / 2 - meio) / el.offsetWidth;
         el.style.setProperty('--s', (1 - 0.2 * Math.min(1, d)).toFixed(3));
         el.classList.toggle('ativo', d < 0.5);
       });
     }
-    function pedir(){ if (!agendado){ agendado = true; requestAnimationFrame(atualizar); } }
+    // a cada quadro, anda só um pedaço do caminho até o alvo: o movimento fica macio
+    function quadro(){
+      if (atual === null) atual = alvo;
+      atual += (alvo - atual) * 0.12;
+      if (Math.abs(alvo - atual) < 0.5) atual = alvo;
+      aplicar(atual);
+      if (atual !== alvo) requestAnimationFrame(quadro); else rodando = false;
+    }
+    function pedir(){
+      if (!mq.matches){ passos.forEach(function(p){ p.style.removeProperty('--s'); }); return; }
+      alvo = calcularAlvo();
+      if (!rodando){ rodando = true; requestAnimationFrame(quadro); }
+    }
     window.addEventListener('scroll', pedir, { passive:true });
-    window.addEventListener('resize', pedir);
-    window.addEventListener('load', pedir);
+    window.addEventListener('resize', function(){ atual = null; pedir(); });
+    window.addEventListener('load', function(){ atual = null; pedir(); });
     pedir();
   })();
 

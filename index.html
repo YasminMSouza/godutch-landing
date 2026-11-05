@@ -398,6 +398,45 @@
   })();
 
   /* =========================================================
+     ANIMAÇÃO 2b — celular: carteira, celular e confetes sobem JUNTO com a rolagem
+     (no celular a carteira já aparece na tela ao abrir, então a subida "de uma vez"
+     passava rápido demais e não dava pra ver). Desce de volta se rolar pra cima.
+     ========================================================= */
+  (function(){
+    if (!document.documentElement.classList.contains('anim')) return;
+    var mq = window.matchMedia('(max-width: 767px)');
+    var els = Array.prototype.slice.call(document.querySelectorAll('.carteira .sobe'));
+    var atual = els.map(function(){ return 0; }), rodando = false;
+    function alvos(){
+      var h = window.innerHeight, y = window.pageYOffset;
+      return els.map(function(el){
+        var o = parseFloat(el.style.getPropertyValue('--ordem')) || 0;
+        // cada um começa um pouco depois do outro (em cadeia) e completa em ~45% da tela rolada
+        var p = (y - o * h * 0.08) / (h * 0.45);
+        p = Math.max(0, Math.min(1, p));
+        return 1 - Math.pow(1 - p, 2);              // sai rápido e chega devagar
+      });
+    }
+    function quadro(){
+      var a = alvos(), mexeu = false;
+      els.forEach(function(el, i){
+        atual[i] += (a[i] - atual[i]) * 0.15;
+        if (Math.abs(a[i] - atual[i]) < 0.002) atual[i] = a[i]; else mexeu = true;
+        el.style.setProperty('--q', atual[i].toFixed(3));
+      });
+      if (mexeu) requestAnimationFrame(quadro); else rodando = false;
+    }
+    function pedir(){
+      if (!mq.matches) return;
+      document.documentElement.classList.add('sobe-rolagem');
+      if (!rodando){ rodando = true; requestAnimationFrame(quadro); }
+    }
+    window.addEventListener('scroll', pedir, { passive:true });
+    window.addEventListener('resize', pedir);
+    pedir();
+  })();
+
+  /* =========================================================
      ANIMAÇÃO 4 — bolinhas da notinha aparecem conforme desce
      e somem (encolhendo) se voltar pra cima
      ========================================================= */

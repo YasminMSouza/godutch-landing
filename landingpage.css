@@ -491,3 +491,13 @@ html[lang="en"] .download .slogan{ font-size:calc(8 * var(--u)); }
   .anim .trilho{ scroll-snap-type:none; }
   .anim .passo, .anim .passo.ativo{ transform:scale(var(--s,.8)); transition:none; }
 }
+
+/* 2b. Celular: carteira/celular/confetes sobem junto com a rolagem (--q vem do JS, 0 a 1) */
+@media (max-width:767px){
+  .anim.sobe-rolagem .carteira .sobe,
+  .anim.sobe-rolagem .carteira .sobe.visivel{
+    translate:0 calc(calc(140 * var(--u)) * (1 - var(--q,0)));
+    opacity:var(--q,0);
+    transition:none;
+  }
+}
